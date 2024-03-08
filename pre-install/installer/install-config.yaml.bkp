@@ -22,7 +22,7 @@ networking:
     hostPrefix: 23
   machineNetwork:
   - cidr: 10.231.0.0/16
-  networkType: OpenShiftSDN
+  networkType: OVNKubernetes
   serviceNetwork:
   - 172.30.0.0/16
 platform:
@@ -36,4 +36,3 @@ pullSecret: '{ "auths": { "cloud.openshift.com": { "auth": "b3BlbnNoaWZ0LXJlbGVh
   "email": "sunitha.udayagiri@intel.com" }, "docker.io": { "auth": "aW90Z2RldmNsb3VkOmRldmNsb3VkQGludGVs"
   } } }'
 sshKey: |
-  ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOrdaVrVowAC6bZYGdx+H95+dLI7Buzc76fI8E4pcMQf root@ip-10-231-14-111.ap-south-1.compute.internal
