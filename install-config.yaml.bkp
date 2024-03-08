@@ -1,0 +1,39 @@
+additionalTrustBundlePolicy: Proxyonly
+apiVersion: v1
+baseDomain: awsdevcloud.com
+compute:
+- architecture: amd64
+  hyperthreading: Enabled
+  name: worker
+  platform: {}
+  replicas: 3
+controlPlane:
+  architecture: amd64
+  hyperthreading: Enabled
+  name: master
+  platform: {}
+  replicas: 3
+metadata:
+  creationTimestamp: null
+  name: bahubali
+networking:
+  clusterNetwork:
+  - cidr: 10.64.0.0/14
+    hostPrefix: 23
+  machineNetwork:
+  - cidr: 10.231.0.0/16
+  networkType: OpenShiftSDN
+  serviceNetwork:
+  - 172.30.0.0/16
+platform:
+  none: {}
+publish: External
+pullSecret: '{ "auths": { "cloud.openshift.com": { "auth": "b3BlbnNoaWZ0LXJlbGVhc2UtZGV2K29jbV9hY2Nlc3NfMjU1NTAwMjA1MWMyNDY3MzlmOTM0MDM5YjhmODY5MTE6STlRRlk4NjJEUExTRU9JNlhFV0s5WU9VSU1NR0w4WThYSENLRDdBUllaQlZKVzVZWEw0NkVLTVhHMlhDRExNRA==",
+  "email": "sunitha.udayagiri@intel.com" }, "quay.io": { "auth": "b3BlbnNoaWZ0LXJlbGVhc2UtZGV2K29jbV9hY2Nlc3NfMjU1NTAwMjA1MWMyNDY3MzlmOTM0MDM5YjhmODY5MTE6STlRRlk4NjJEUExTRU9JNlhFV0s5WU9VSU1NR0w4WThYSENLRDdBUllaQlZKVzVZWEw0NkVLTVhHMlhDRExNRA==",
+  "email": "sunitha.udayagiri@intel.com" }, "registry.connect.redhat.com": { "auth":
+  "fHVoYy1wb29sLTg0Njk5NWRlLTE4MzAtNDEyYi1iNjczLTU3NzFmNjQwNDYzYTpleUpoYkdjaU9pSlNVelV4TWlKOS5leUp6ZFdJaU9pSTBOemxrTkdJME9UQmhORGcwWkRnNFlqRm1ZMlF4TUdNd056WXdNelpsWWlKOS5EWkQta1NfbGtRT0RUNFFBdVNHOE1fQno1YnZZNENHdFFSbnFxSWU2dWpvWW5Mc2g3TTNTTkIzUm42SjF3M2Q0SjNaaVp5RHVNeUNYNkhVakRrWVd6YU9fV1FqLTZXelRLbUR2aGFKYlBMRWhZNHhHRW1vdjlhMDIzTy1XNzh1MENaVGgwZ1lnQWswT3JRRUEzSXhVa2hZMUdIM1BwNE5xNGU3azhKNjhnQVIxMTVGdXB3TlNxdVhXQ19qS1A3Wms1eVpURjBEbmpHalFBVEhkMzRLdE8zbWZzYzJKREROOHBxcWVqR09XUDI5ZktoakVhdWlNY2g5VnVkNjRqQTZPVVhOSGh1OGZ3ZkExZDhQRWNXMmp2RnIwVm42WV9kazJUOVFUOUZJZWhveXFfMEszOG93czVEbmNFcVN2Y25pbEwwT2sxTTlaZXNBS1Yxc0hIankxY1JZdS02eVdqVW5OVmpyUWxWcVhMeXEyOE9oRmw0ckkwSHd1d3JybzVPWm53X0NCcDFHNDlJQUN0R2Q3SGFmZ2RuU2o1cGdaeTFMX1NybW11czFERk1EUHhoV0tvSWo3OGFtZW1lVzd4Y2xXbF90bmIyVW5NSFlhb1lqTkVrUlp0NVhBRzBYZHZnUFg2a2JoOUI3QXcwNzlrMzgyQU5EUlF6ZUNFdG9tRmZSd202R202WEdFVGRmZk9oMFNubG5pZ3R6a3dYbDVfbmdpZWVWbUt6eWcyaW9xMGtjbDRwSldhVkEzTXRmLU1SWnNKUVhiSWZ0eU5CZnVpZjQwRFZISDlINFZmVFhVV29RVHJnak9uQnFBeTRqM2RjRC11U0VBRHFFekRja0NwV2UxSXJiTjRWWkwzdXJsdnZka3NnQW9qd2RfSERPRlBaVVpYYXdfTEZqaWFTTQ==",
+  "email": "sunitha.udayagiri@intel.com" }, "registry.redhat.io": { "auth": "fHVoYy1wb29sLTg0Njk5NWRlLTE4MzAtNDEyYi1iNjczLTU3NzFmNjQwNDYzYTpleUpoYkdjaU9pSlNVelV4TWlKOS5leUp6ZFdJaU9pSTBOemxrTkdJME9UQmhORGcwWkRnNFlqRm1ZMlF4TUdNd056WXdNelpsWWlKOS5EWkQta1NfbGtRT0RUNFFBdVNHOE1fQno1YnZZNENHdFFSbnFxSWU2dWpvWW5Mc2g3TTNTTkIzUm42SjF3M2Q0SjNaaVp5RHVNeUNYNkhVakRrWVd6YU9fV1FqLTZXelRLbUR2aGFKYlBMRWhZNHhHRW1vdjlhMDIzTy1XNzh1MENaVGgwZ1lnQWswT3JRRUEzSXhVa2hZMUdIM1BwNE5xNGU3azhKNjhnQVIxMTVGdXB3TlNxdVhXQ19qS1A3Wms1eVpURjBEbmpHalFBVEhkMzRLdE8zbWZzYzJKREROOHBxcWVqR09XUDI5ZktoakVhdWlNY2g5VnVkNjRqQTZPVVhOSGh1OGZ3ZkExZDhQRWNXMmp2RnIwVm42WV9kazJUOVFUOUZJZWhveXFfMEszOG93czVEbmNFcVN2Y25pbEwwT2sxTTlaZXNBS1Yxc0hIankxY1JZdS02eVdqVW5OVmpyUWxWcVhMeXEyOE9oRmw0ckkwSHd1d3JybzVPWm53X0NCcDFHNDlJQUN0R2Q3SGFmZ2RuU2o1cGdaeTFMX1NybW11czFERk1EUHhoV0tvSWo3OGFtZW1lVzd4Y2xXbF90bmIyVW5NSFlhb1lqTkVrUlp0NVhBRzBYZHZnUFg2a2JoOUI3QXcwNzlrMzgyQU5EUlF6ZUNFdG9tRmZSd202R202WEdFVGRmZk9oMFNubG5pZ3R6a3dYbDVfbmdpZWVWbUt6eWcyaW9xMGtjbDRwSldhVkEzTXRmLU1SWnNKUVhiSWZ0eU5CZnVpZjQwRFZISDlINFZmVFhVV29RVHJnak9uQnFBeTRqM2RjRC11U0VBRHFFekRja0NwV2UxSXJiTjRWWkwzdXJsdnZka3NnQW9qd2RfSERPRlBaVVpYYXdfTEZqaWFTTQ==",
+  "email": "sunitha.udayagiri@intel.com" }, "docker.io": { "auth": "aW90Z2RldmNsb3VkOmRldmNsb3VkQGludGVs"
+  } } }'
+sshKey: |
+  ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOrdaVrVowAC6bZYGdx+H95+dLI7Buzc76fI8E4pcMQf root@ip-10-231-14-111.ap-south-1.compute.internal
